@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-blue: #3a5f8b;
+            --light-blue: #e0f0ff;
+            --dark-blue: #1e3c64;
+            --accent-blue: #5e8eca;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fcff;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-blue) !important;
+            font-size: 1.8rem;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .nav-link {
+            color: var(--dark-blue) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-blue) !important;
+        }
+        
+        .search-form {
+            position: relative;
+        }
+        
+        .search-form input {
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding-right: 40px;
+        }
+        
+        .search-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            border: none;
+            background: none;
+            color: var(--primary-blue);
+        }
+        
+        .section-sidebar {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+        
+        .section-sidebar h5 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .section-sidebar ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+        
+        .section-sidebar li {
+            margin-bottom: 12px;
+        }
+        
+        .section-sidebar a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .section-sidebar a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .jumbotron {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jumbotron::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        .jumbotron-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .jumbotron h2 {
+            color: var(--dark-blue);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .jumbotron p {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+        
+        .feature-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-box h5 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+        
+        .feature-box li {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .item-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .item-card h6 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .external-links {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+        
+        .external-links h5 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .external-links ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+        
+        .external-links li {
+            margin-bottom: 10px;
+        }
+        
+        .external-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .external-links a:hover {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex search-form">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button type="submit"><i class="bi bi-search"></i>🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="section-sidebar">
+                    <h5>BAGIAN</h5>
+                    <ul>
+                        <li><a href="#">Bagian 1</a></li>
+                        <li><a href="#">Bagian 2</a></li>
+                        <li><a href="#">Bagian 3</a></li>
+                        <li><a href="#">Bagian 4</a></li>
+                        <li><a href="#">Bagian 5</a></li>
+                        <li><a href="#">Bagian 6</a></li>
+                        <li><a href="#">Bagian 7</a></li>
+                        <li><a href="#">Bagian 8</a></li>
+                        <li><a href="#">Bagian 9</a></li>
+                        <li><a href="#">Bagian 10</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KOLOM DI TENGAH -->
+            <div class="col-lg-6 mb-4">
+                <!-- Jumbotron -->
+                <div class="jumbotron mb-4">
+                    <div class="jumbotron-content">
+                        <h2>selamat datang di web desain wahyu dimasda</h2>
+                        <button class="btn" style="background-color: var(--primary-blue); color: white;">PELAJARI LEBIH LANJUT</button>
+                    </div>
+                </div>
+
+                <!-- KOLOM ITEM -->
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="item-card">
+                            <h6>Item 1</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="item-card">
+                            <h6>Item 2</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="item-card">
+                            <h6>Item 3</h6>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KOLOM FITUR -->
+            <div class="col-lg-3">
+                <!-- Features Box -->
+                <div class="feature-box mb-4">
+                    <h5>FITUR
+                    <ul>
+                        <li>Fitur 1</li>
+                        <li>Fitur 2</li>
+                        <li>Fitur 3</li>
+                        <li>Fitur 4</li>
+                        <li>Fitur 5</li>
+                    </ul>
+                </div>
+
+                <!-- KOLOM LINK -->
+                <div class="external-links">
+                    <h5>External Links</h5>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
